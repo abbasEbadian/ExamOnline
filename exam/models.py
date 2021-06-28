@@ -4,7 +4,7 @@ from django.db.models.base import Model, ModelStateFieldsCacheDescriptor
 # Create your models here.
 class Image(models.Model):
     image = models.ImageField()
-    question = models.ForeignKey("Qyestion")
+    question = models.ForeignKey("Qyestion", on_delete=models.CASCADE)
     type = models.CharField(max_length=1, choices=[
         ("A", "Answer"),
         ("Q", "Question")
@@ -37,6 +37,6 @@ class Exam(models.Model):
     datetime = models.DateTimeField(auto_now=False, auto_now_add=False)
     duration = models.IntegerField()
     master = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
-    
+
 
 
