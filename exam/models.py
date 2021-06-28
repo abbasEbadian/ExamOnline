@@ -4,7 +4,7 @@ from django.db.models.base import Model, ModelStateFieldsCacheDescriptor
 # Create your models here.
 class Image(models.Model):
     image = models.ImageField()
-    question = models.ForeignKey("Qyestion", on_delete=models.CASCADE)
+    question = models.ForeignKey("Question", on_delete=models.CASCADE)
     type = models.CharField(max_length=1, choices=[
         ("A", "Answer"),
         ("Q", "Question")
