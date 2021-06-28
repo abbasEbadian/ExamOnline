@@ -27,7 +27,7 @@ class Question(models.Model):
     option4 = models.CharField(max_length=120)
     currect_answer = models.CharField(max_length=120)
     long_answer = models.TextField()
-    exam = models.ForeignKey("Exam")
+    exam = models.ForeignKey("Exam", on_delete=models.CASCADE)
     
     def __str__(self):
         return self.question_text
